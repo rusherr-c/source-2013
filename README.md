@@ -1,48 +1,64 @@
-# Source Engine
-[![GitHub Actions Status](https://github.com/nillerusr/source-engine/actions/workflows/build.yml/badge.svg)](https://github.com/nillerusr/source-engine/actions/workflows/build.yml) [![GitHub Actions Status](https://github.com/nillerusr/source-engine/actions/workflows/tests.yml/badge.svg)](https://github.com/nillerusr/source-engine/actions/workflows/tests.yml)
- Discord: [![Discord Server](https://img.shields.io/discord/672055862608658432.svg)](https://discord.gg/hZRB7WMgGw)
- 
+# Source Engine 2013
+Fork of nillerusr's source engine.
 
-Information from [wikipedia](https://wikipedia.org/wiki/Source_(game_engine)):
+The fork does not correspond to the master branch of the nillerusr's engine, since the master branch does not support (although it did) Win32 build mode.
 
-Source is a 3D game engine developed by Valve.
-It debuted as the successor to GoldSrc with Half-Life: Source in June 2004,
-followed by Counter-Strike: Source and Half-Life 2 later that year.
-Source does not have a concise version numbering scheme; instead, it was released in incremental versions
+Instead of the master branch, <a href="https://github.com/nillerusr/source-engine/tree/be3d0e301f2bf7c53267378ad8c932084077967f">Commit be3d0e3</a> is used.
 
-Source code is based on TF2 2018 leak. Don't use it for commercial purposes.
+# How to build? (WINDOWS ONLY)
+Install <b>Python 3 (3.9 - 3.14).</b><br>
+Open powershell,<br>
+Clone repo and change directory:
+```
+git clone https://github.com/rusherr-c/source-engine --recursive --depth 1
+cd source-engine
+```
 
-This project is using waf buildsystem. If you have waf-related questions look https://waf.io/book
+# Instructions
+## Configure
+> 📝
+> Also there is a configure macro (configure.py)
 
-# Features:
-- Android, OSX, FreeBSD, Windows support
-- Arm support( except windows )
-- 64bit support
-- Modern toolchains support
-- Fixed many undefined behaviours
-- Touch support( even on windows/linux/osx )
-- PBR support
-- bsp v19-v21 support( bsp v21 support is partial, portal 2 and csgo maps works fine )
-- mdl v46-49 support
-- Removed useless/unnecessary dependencies
-- Achivement system working without steam
-- Fixed many bugs
+Run `.\waf configure -T <BUILDMODE>`, where BUILDMODE is release or debug.<br>
+If it says something like `No such file or directory` use python3 or python prefix before ./waf.<br>
+If you need a 64 bit build add -64bits argument to WAF.<br>
+To change game that will be builded add `--build-games <GAME> --prefix <GAME>`<br>
+Where GAME is:
 
-# Current tasks
-- Rewrite materialsystem for OpenGL render
-- dxvk-native support
-- Elbrus port
-- Bink audio support( for video_bink )
-- Rewrite serverbrowser to work without steam
+**_hl1_** = Half-Life 1: Source
 
-# How to Build?
-- [Windows](https://github.com/nillerusr/source-engine/wiki/How-to-build#on-windows)
-- [Linux](https://github.com/nillerusr/source-engine/wiki/How-to-build#on-linux)
-- [For Android under Linux](https://github.com/nillerusr/source-engine/wiki/How-to-build#on-linux-for-android)
+**_hl2_** = Half-Life 2 // Default - This will be selected if you don't specify a game
 
-# Support me
-BTC: `bc1qnjq92jj9uqjtafcx2zvnwd48q89hgtd6w8a6na`
+**_episodic_** = Half-Life 2 Episode 1 + Episode 2
 
-ETH: `0x5d0D561146Ed758D266E59B56e85Af0b03ABAF46`
+**_hl2mp_** = Half-Life 2: Deathmatch
 
-XMR: `48iXvX61MU24m5VGc77rXQYKmoww3dZh6hn7mEwDaLVTfGhyBKq2teoPpeBq6xvqj4itsGh6EzNTzBty6ZDDevApCFNpsJ`
+**_cstrike_** = Counter-Strike: Source
+
+## Build
+
+Run `.\waf build` to build every project or if you want to build just one project or several projects use `.\waf build --targets <TARGETS>`<br>
+Where TARGETS is projects separated by comma (E.G `.\waf build --targets client,server`)<br>
+
+## Run
+
+You need to use some Half-Life 2 build before Anniversary Update and not the steam_legacy.<br>
+I'm using <b>build 5377866 (from 2020)</b> that can be installed from <b>Steam Console</b> <br>
+To open <b>Steam Console</b> you need to press <b>Windows + R</b>, and type:<br>
+```
+steam://open/console
+```
+Command in Steam Console:
+```
+download_depot 220 221 773449029659131748
+```
+
+# Problems
+If you running Counter-Strike Source please ensure you are using v92(build 6953255) content,<br>
+You can install it from Steam, using beta version previous_build.<br>
+Or if you don't have bought CSS, install it's dedicated server using SteamCmd.<br>
+Commands in SteamCmd:
+```
+login anonymous
+app_update 232330 -beta previous_build validate
+```

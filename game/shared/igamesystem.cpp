@@ -225,7 +225,7 @@ bool IGameSystem::InitAllSystems()
 #endif
 		if ( !valid )
 			// Even if it's critical do not return false
-			Msg( "%s->Init():FAILED", sys->Name() );
+			Msg( "%s->Init():FAILED\n", sys->Name() );
 			//return false;
 	}
 

@@ -224,7 +224,9 @@ bool IGameSystem::InitAllSystems()
 		XBX_rTimeStampLog( Plat_FloatTime(), sz );
 #endif
 		if ( !valid )
-			return false;
+			// Even if it's critical do not return false
+			Msg( "%s->Init():FAILED", sys->Name() );
+			//return false;
 	}
 
 	return true;

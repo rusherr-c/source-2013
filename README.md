@@ -1,5 +1,5 @@
 # Source Engine 2013
-Fork of nillerusr's source engine.
+Fork of nillerusr's source engine with x86 support.
 
 The fork does not correspond to the master branch of the nillerusr's engine, since the master branch does not support (although it did) Win32 build mode.
 

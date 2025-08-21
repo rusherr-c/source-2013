@@ -1,0 +1,24 @@
+{
+    // Tasks for source engine
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "WAF Configure",
+            "type": "shell",
+            "command": "python configure.py",
+            "problemMatcher": []
+        },
+        {
+            "label": "WAF Build",
+            "type": "shell",
+            "command": "python waf build",
+            "problemMatcher": []
+        },
+        {
+            "label": "WAF Install",
+            "type": "shell",
+            "command": "python waf install",
+            "problemMatcher": []
+        }
+    ]
+}

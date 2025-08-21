@@ -6,7 +6,7 @@ The fork does not correspond to the master branch of the nillerusr's engine, sin
 Instead of the master branch, <a href="https://github.com/nillerusr/source-engine/tree/be3d0e301f2bf7c53267378ad8c932084077967f">Commit be3d0e3</a> is used.
 
 # How to build? (WINDOWS ONLY)
-Install <b>Python 3 (3.9 - 3.14).</b><br>
+Install **Python 3 (3.9 - 3.14 is supported) and Visual Studio with MSVC compiler (v141 - v143 is supported)** <br>
 Open powershell,<br>
 Clone repo and change directory:
 ```

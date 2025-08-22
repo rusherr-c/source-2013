@@ -10,7 +10,7 @@ Install **Python 3 (3.9 - 3.14 is supported) and Visual Studio with MSVC compile
 Open powershell,<br>
 Clone repo and change directory:
 ```
-git clone https://github.com/rusherr-c/source-engine --recursive --depth 1
+git clone https://github.com/rusherr-c/source-2013 --recursive --depth 1
 cd source-engine
 ```
 
